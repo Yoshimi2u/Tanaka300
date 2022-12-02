@@ -4,6 +4,9 @@ $(function(){
     $('#createbtn').on('click', function() {
         var rgb = getScore();
         navigator.clipboard.writeText(rgb);
+        $('#success-msg').fadeIn("slow", function () {
+            $(this).delay(2000).fadeOut("slow");
+        });
         function getScore() {
             var score = 0;
             var str = "";
@@ -23,6 +26,7 @@ $(function(){
                     break;
                 }
             }
+            
             $("#out_dat").append(score + "点です");
             $("#out_dat").append(cnt + "回<br>");
             return str;
