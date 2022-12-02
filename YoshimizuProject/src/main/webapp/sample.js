@@ -29,6 +29,7 @@ $(function(){
             
             $("#out_dat").append(score + "点です");
             $("#out_dat").append(cnt + "回<br>");
+            $('#createbtn').blur();
             return str;
         }
     });
