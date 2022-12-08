@@ -5,21 +5,23 @@ $(function() {
     navigator.clipboard.writeText(rgb);
     $('#createbtn').prop('disabled', true);
     setTimeout(function() {
+      $('#success-msg, #createbtn').fadeOut(700).animate({
+        'marginTop': '0px'
+      }, {
+        duration: 1000,
+        queue: false
+      });
+      setTimeout(function(){
       $('#createbtn').prop('disabled', false);
-      $('#success-msg').fadeOut(700).animate({
-      'marginTop': '0px'
-    }, {
-      duration: 1000,
-      queue:false
-    });
+      },400);
     }, 2300);
     $('#success-msg').fadeIn(1000).animate({
-      'marginTop': '480px'
+      'marginTop': '490px'
     }, {
       duration: 500,
       queue: false
     });
-    
+
     function getScore() {
       var score = 0;
       var str = "";
