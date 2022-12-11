@@ -12,7 +12,22 @@
 
 <body>
   <script type="text/javascript" src="sample.js"></script>
-  <label class="ms-5 fs-2">ホームページ</label>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">ホームページ</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" href="#">Home</a>
+        <a class="nav-link" href="#">Features</a>
+        <a class="nav-link" href="#">Pricing</a>
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      </div>
+    </div>
+  </div>
+</nav>
   <div class="container border rounded border-success border-4 mb-1">
     <label class="fs-4 mt-1">毎日の振り返り採点</label>
     <br><br>
@@ -22,7 +37,7 @@
       </button>
     </div>
   </div>
-  <div class="mx-auto w-25 rounded-3" id="success-msg" style="display:none; background: #8EC3B0;margin-top:-36px;">
+  <div class="mx-auto w-50 rounded-3" id="success-msg" style="display:none; background: #8EC3B0;margin-top:-36px;">
     <div class="text-center fs-4" id="showScore"></div>
   </div>
   <div class="container border rounded border-success border-4 mt-2">

@@ -106,10 +106,8 @@ $(function() {
       $('#roulette').addClass('btn-danger');
       $('#roulette span').html('ストップ');
       recipe = setInterval(function(){
-	var cnt = menuList.length +1;
-	var rand = Math.floor(Math.random() * Number(cnt));
-	$('#recipe').html(menuList[rand]);
-	},10);
+		rundomRecipe();
+	},20);
     }
     else if ($('#roulette').hasClass('btn-danger')) {
 	  $('#roulette').removeClass('btn-danger');
@@ -119,7 +117,6 @@ $(function() {
     }
   });
 });
-var max = 0;
 function getScore() {
   var score = 0;
   var str = "";
@@ -173,8 +170,7 @@ function createLeftWorkDate() {
 }
 
 var rundomRecipe = function(){
-	var cnt = menuList.length();
+	var cnt = menuList.length +1;
 	var rand = Math.floor(Math.random() * cnt);
-	console.log(cnt + "  " + rand);
-	$('#recipe').html(menuList[cnt]);
+	$('#recipe').html(menuList[rand]);
 }
