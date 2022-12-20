@@ -1,5 +1,5 @@
 var menuList = ['鶏むね肉のねぎしょうがだれ'
-  , '鳥胸肉とセロリの焼きマリネ'
+  , '鶏胸肉とセロリの焼きマリネ'
   , '鶏むねマヨクリームソース'
   , '鶏肉のねぎま煮'
   , '鶏肉のチリレモンバター'
@@ -47,6 +47,12 @@ var menuList = ['鶏むね肉のねぎしょうがだれ'
   , 'カレー'
   , 'パスタ'];
 $(function() {
+	$(document).ready(function(){
+		for(var i = 0; i < menuList.length; i++){
+			$('#recipeList').append("・"+menuList[i] +"<br>");
+		}
+		$('#recipeList').append("計" + (menuList.length+1)+"品");
+	});
   $('#createbtn').on('click', function() {
     var score = getScore().split(',');
     navigator.clipboard.writeText(score[0]);
@@ -114,6 +120,9 @@ $(function() {
       $('#roulette').addClass('btn-success');
       $('#roulette span').html('スタート');
       clearInterval(recipe);
+      $('.toast-body').html($('#recipe').html());
+      let toast = new bootstrap.Toast($('#toastExample'), {autohide: false});
+        toast.show();    //ここを追加
     }
   });
 });
@@ -151,7 +160,7 @@ function createGoingWorkDate() {
   if (minute < 10) { minute = "0" + minute };
   if (year < 2000) { year += 1900 };
 
-  var dateStr = year + "年" + month + "月" + day + "日" + hour + ":" + minute + "作業開始します。体調問題ありません。";
+  var dateStr = year + "年" + month + "月" + day + "日 " + hour + ":" + minute + " 作業開始します。体調問題ありません。";
   return dateStr;
 }
 
@@ -165,7 +174,7 @@ function createLeftWorkDate() {
   if (minute < 10) { minute = "0" + minute };
   if (year < 2000) { year += 1900 };
 
-  var dateStr = year + "年" + month + "月" + day + "日" + hour + ":" + minute + "作業終了します。";
+  var dateStr = year + "年" + month + "月" + day + "日 " + hour + ":" + minute + " 作業終了します。";
   return dateStr;
 }
 

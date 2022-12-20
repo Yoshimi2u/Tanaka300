@@ -12,22 +12,38 @@
 
 <body>
   <script type="text/javascript" src="sample.js"></script>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">ホームページ</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="#">Home</a>
-        <a class="nav-link" href="#">Features</a>
-        <a class="nav-link" href="#">Pricing</a>
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">ホームページ</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link" href="#">Features</a>
+          <a class="nav-link" href="#">Pricing</a>
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">レシピ表</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="recipeList" style="height:400px;"></div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+        </div>
       </div>
     </div>
   </div>
-</nav>
   <div class="container border rounded border-success border-4 mb-1">
     <label class="fs-4 mt-1">毎日の振り返り採点</label>
     <br><br>
@@ -50,10 +66,10 @@
       </div>
     </div>
     <div class="d-flex justify-content-center mb-1">
-    <div class="form-check form-switch">
-      <input class="form-check-input" type="checkbox" checked>
-      <label class="form-check-label">1分追加する</label>
-    </div>
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" checked>
+        <label class="form-check-label">1分追加する</label>
+      </div>
     </div>
   </div>
   <div class="mx-auto w-50 rounded-3" id="createMsg" style="display:none; background: #8EC3B0;margin-top:-36px;">
@@ -63,15 +79,39 @@
   <div class="container border rounded border-success border-4 mt-2 mb-1">
     <label class="fs-4 mt-1">夕食のレシピ決め</label>
     <br>
-    <div class="mb-1  text-center">
-    <div id = "recipe" class="fs-5 mb-3"></div>
-      <button id="roulette" class="btn btn-success btn-lg">
+    <div id="recipe" class="fs-5 mb-3 text-center"></div>
+    <div class="row mx-auto" style="width:200px;">
+      <button id="roulette" class="btn btn-success btn mb-2 mx-auto fs-4" style="width:100px;">
         <span>スタート</span>
       </button>
+      <button type="button" class="btn btn-primary my-o mb-2 mx-auto" data-bs-toggle="modal"
+        data-bs-target="#exampleModal" style="width:170px;">
+        レシピ一覧を見る
+      </button>
     </div>
+  </div>
+  <div class="toast-container mx-auto" style="width:200px;">
+    <div id="toastExample" class="toast hide bg-light" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <strong class="me-auto">今日のレシピ</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+      </div>
+    </div>
+    <div id="toastsan" class="toast hide bg-light" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <strong class="me-auto">今日のレシピ</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+      </div>
+    </div>
+    
   </div>
   <div class="mx-auto w-25 rounded-3" id="success-msg" style="display:none; background: #8EC3B0;margin-top:-36px;">
     <div class="text-center fs-4" id="desideRecipe"></div>
   </div>
 </body>
+
 </html>
