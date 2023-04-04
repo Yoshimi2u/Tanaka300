@@ -45,7 +45,8 @@ var menuList = ['鶏むね肉のねぎしょうがだれ'
   , 'まいたけのきんぴら'
   , '親子丼'
   , 'カレー'
-  , 'パスタ'];
+  , 'パスタ'
+  , '湯豆腐'];
 $(function() {
 	$(document).ready(function(){
 		for(var i = 0; i < menuList.length; i++){
