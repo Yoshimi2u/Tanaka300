@@ -84,7 +84,6 @@ $(function() {
     var Date = (a === 'start') ? createGoingWorkDate() : createLeftWorkDate();
     navigator.clipboard.writeText(Date);
     $('#show').html(Date);
-    console.log($('#show').val());
     // $('#out_dat').children().remove();
     $("#out_dat").append('<span>' + Date + "</span><br>");
     $('.btn-group').children().prop('disabled', true);

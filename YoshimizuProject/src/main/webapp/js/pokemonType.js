@@ -55,7 +55,6 @@ $(function() {
                 } else{
                 a = String(result[0][key]);
                 }
-                console.log(a);
                 $('#typeEffectiveTable tr td').eq(cnt).html(createEffectiveString(a));
                 $('#typeEffectiveTable tr td').eq(cnt).css('background',createEffectiveColor(a));
                 cnt++;
@@ -73,7 +72,6 @@ $(function() {
             var cnt = 0;
             for (key in result) {
                 var attack = String(result[key]);
-                console.log(attack);
                 $('#attackTypeTable tr td').eq(cnt).html(createEffectiveString(attack));
                 $('#attackTypeTable tr td').eq(cnt).css('background',createEffectiveColor(attack));
                 cnt++;
@@ -98,7 +96,6 @@ function typeEffectiveAjax(){
                 } else{
                 a = String(result[0][key]);
                 }
-                console.log(a);
                 $('#typeEffectiveTable tr td').eq(cnt).html(createEffectiveString(a));
                 $('#typeEffectiveTable tr td').eq(cnt).css('background',createEffectiveColor(a));
                 cnt++;
@@ -108,7 +105,6 @@ function typeEffectiveAjax(){
 }
 
 function createEffectiveString(str) {
-    console.log(str);
     var EffectiveMessage = "";
     switch (str) {
         case '0':

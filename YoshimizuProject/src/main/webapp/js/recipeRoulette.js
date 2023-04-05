@@ -50,7 +50,6 @@ var menuList = ['鶏むね肉のねぎしょうがだれ'
   , 'カレー'
   , 'パスタ'
   , '湯豆腐'];
-console.log(menuList.length);
 var listSize = menuList.length - 1;
 var constListSize = menuList.length - 1;
 var speed = 400;
@@ -66,8 +65,6 @@ $(function() {
       $('#stop').fadeIn(600);
     }, 800);
     aiueo = setInterval(function() {
-      console.log("aiueo");
-      console.log(parseInt($('#roulette').css('margin-top'), 10));
       $('#roulette').animate({
         'marginTop': '0px'
       }, {
@@ -129,7 +126,6 @@ function changeContent() {
       $('#roulette tbody tr').eq(Number(i)).children().html(fromItem);
     }
   }
-  console.log(speed);
 }
 
 function printRecipe() {
@@ -140,17 +136,6 @@ function printRecipe() {
     $('#start').show();
   }, 2000);
 }
-/*
-function createTable() {
-  bottomNo = $('#roulette tbody').children().length - 1;
-  console.log(bottomNo + "bottomNo");
-  var cnt = 0;
-  for (i = bottomNo; i >= 0; i--) {
-  $('#roulette tbody tr').eq(Number(i)).children().html(menuList[cnt]);
-  console.log(i);
-  cnt++;
-  }
-}*/
 
 function createSumpleDate() {
   $('#rouletteContent').append("1\n");
@@ -168,7 +153,6 @@ function createSumpleDate() {
 function createTable() {
   rouletteContent = $('#rouletteContent').split("\n");
   for (i = 0; i < rouletteContent.length; i++) {
-    console.log(rouletteContent[i]);
   }
 }
 

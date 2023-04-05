@@ -1,6 +1,5 @@
 $(function() {
 	$('#checkModalBtn').on('click', function() {
-		console.log($('#name').val());
 		$('#checkName').html($('#name').val());
 		$('#checkRequestOptionName').html($('#requestOptionName').val());
 		$('#checkDetailForm').html($('#detailForm').val());
